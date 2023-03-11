@@ -1,4 +1,4 @@
-package page_object;
+package pageobject;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -8,16 +8,14 @@ import static constants.Urls.BASE_URL;
 
 public class MainPage {
 
+    private static final By currentMenu = By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]"); //локатор текущего меню
     private final WebDriver driver;
     private final By loginToAccount = By.xpath(".//button[text()='Войти в аккаунт']"); //локатор кнопки Войти в аккаунт
     private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']"); //локатор кнопки Личный кабинет
     private final By orderButton = By.xpath(".//button[text()='Оформить заказ']"); //локатор кнопки Оформить заказ
     private final By bunsButton = By.xpath(".//span[contains(text(),'Булки')]"); //локатор текста Булки в конструкторе
-    private final By bunsInConstructor = By.xpath(".//div[@style]/div[1]"); // локатор кнопки Булки в конструкторе
     private final By saucesButton = By.xpath(".//span[contains(text(),'Соусы')]"); //локатор текста Соусы
-    private final By saucesInConstructor = By.xpath(".//div[@style]/div[2]"); // локатор кнопки Соусы в конструкторе
     private final By fillingButton = By.xpath(".//span[contains(text(),'Начинки')]"); //локатор текста Начинки
-    private final By fillingsInConstructor = By.xpath(".//div[@style]/div[3]");// локатор кнопки в конструкторе
     private final By setBurgerIndicator = By.xpath(".//*[text()='Соберите бургер']"); //локатор надписи Соберите бургер
 
     public MainPage(WebDriver driver) {
@@ -65,19 +63,9 @@ public class MainPage {
         driver.findElement(fillingButton).click();
     }
 
-    @Step("Get the text of the selected bun button")
-    public String getTextFromSelectedBun() {
-        return driver.findElement(bunsInConstructor).getText();
-    }
-
-    @Step("Get the text of the selected sauces button")
-    public String getTextFromSelectedSauces() {
-        return driver.findElement(saucesInConstructor).getText();
-    }
-
-    @Step("Get the text of the selected fillings button")
-    public String getTextFromSelectedFilling() {
-        return driver.findElement(fillingsInConstructor).getText();
+    @Step("Checking the text of the current menu")
+    public String getTextFromSelectedMenu() {
+        return driver.findElement(currentMenu).getText();
     }
 
 

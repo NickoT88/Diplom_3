@@ -2,9 +2,9 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
-import page_object.LoginPage;
-import page_object.MainPage;
-import page_object.ProfilePage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.ProfilePage;
 
 public class SwitchTest extends SetUpAndClose {
 

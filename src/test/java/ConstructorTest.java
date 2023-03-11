@@ -6,13 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import page_object.MainPage;
+import pageobject.MainPage;
 
 import java.util.concurrent.TimeUnit;
 
 public class ConstructorTest {
-    WebDriver driver;
-    MainPage mainPage;
+    private WebDriver driver;
+    private MainPage mainPage;
 
     @Before
     public void setUp() {
@@ -30,7 +30,7 @@ public class ConstructorTest {
         mainPage.open();
         mainPage.clickFillingsButton();
         mainPage.clickBunsButton();
-        Assert.assertEquals("Булки", mainPage.getTextFromSelectedBun());
+        Assert.assertEquals("Булки", mainPage.getTextFromSelectedMenu());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class ConstructorTest {
         mainPage.open();
         mainPage.clickFillingsButton();
         mainPage.clickSaucesButton();
-        Assert.assertEquals("Соусы", mainPage.getTextFromSelectedSauces());
+        Assert.assertEquals("Соусы", mainPage.getTextFromSelectedMenu());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class ConstructorTest {
         mainPage.open();
         mainPage.clickSaucesButton();
         mainPage.clickFillingsButton();
-        Assert.assertEquals("Начинки", mainPage.getTextFromSelectedFilling());
+        Assert.assertEquals("Начинки", mainPage.getTextFromSelectedMenu());
     }
 
     @After

@@ -12,10 +12,10 @@ import static constants.RandomData.*;
 
 public class SetUpAndClose {
 
-    WebDriver driver;
-    UserSteps userSteps;
-    String accessToken;
-    User user;
+    public WebDriver driver;
+    public UserSteps userSteps;
+    public String accessToken;
+    public User user;
 
     @Before
     public void setUp() {

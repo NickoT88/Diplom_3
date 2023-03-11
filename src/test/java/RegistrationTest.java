@@ -10,19 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import page_object.LoginPage;
-import page_object.MainPage;
-import page_object.RegistrationPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegistrationPage;
 
 import java.util.concurrent.TimeUnit;
 
 import static constants.RandomData.*;
 
 public class RegistrationTest {
-    WebDriver driver;
-    UserSteps userSteps;
-    String accessToken;
-    User user;
+    private WebDriver driver;
+    private User user;
 
     @Before
     public void setUp() {
@@ -96,10 +94,10 @@ public class RegistrationTest {
 
     @After
     public void tearDown() {
-        userSteps = new UserSteps();
+        UserSteps userSteps = new UserSteps();
         Credentials credentials = new Credentials(user.getEmail(), user.getPassword());
         ValidatableResponse responseLogin = userSteps.login(credentials);
-        accessToken = userSteps.getAccessToken(responseLogin);
+        String accessToken = userSteps.getAccessToken(responseLogin);
         userSteps.deletingUsersAfterTests(accessToken);
         driver.quit();
     }

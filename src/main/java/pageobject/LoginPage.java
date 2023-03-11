@@ -1,4 +1,4 @@
-package page_object;
+package pageobject;
 
 import api.User;
 import io.qameta.allure.Step;

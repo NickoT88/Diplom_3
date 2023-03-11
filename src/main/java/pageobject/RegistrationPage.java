@@ -1,4 +1,4 @@
-package page_object;
+package pageobject;
 
 import api.User;
 import io.qameta.allure.Step;
@@ -10,9 +10,9 @@ import static constants.Urls.REGISTER_PAGE_URL;
 public class RegistrationPage {
 
     private final WebDriver driver;
-    private final By nameField = By.xpath("//fieldset[1]/div/div/input"); //локатор поля ввода имя
-    private final By emailField = By.xpath("//fieldset[2]/div/div/input"); //локатор поля ввода email
-    private final By passwordField = By.xpath("//fieldset[3]/div/div/input"); //локатор поля ввода пароль
+    private final By nameField = By.xpath(".//label[text() = 'Имя']/../input[contains(@name, 'name')]"); //локатор поля ввода имя
+    private final By emailField = By.xpath(".//label[text() = 'Email']/../input[contains(@name, 'name')]"); //локатор поля ввода email
+    private final By passwordField = By.xpath(".//label[text() = 'Пароль']/../input[contains(@type, 'password')]"); //локатор поля ввода пароль
     private final By registerButton = By.xpath("//button[text()='Зарегистрироваться']"); //локатор кнопки зарегистрироваться
     private final By signInButton = By.xpath(".//a[text()='Войти']"); //локтор кнопки войти внизу страницы
     private final By wrongPassword = By.xpath(".//*[text()='Некорректный пароль']"); //локатор надписи Некорректный пароль

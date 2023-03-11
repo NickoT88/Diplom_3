@@ -2,10 +2,10 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
-import page_object.LoginPage;
-import page_object.MainPage;
-import page_object.PasswordRecoveryPage;
-import page_object.RegistrationPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.PasswordRecoveryPage;
+import pageobject.RegistrationPage;
 
 public class EntranceTest extends SetUpAndClose {
 
