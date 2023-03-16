@@ -8,8 +8,8 @@ import static constants.Urls.BASE_URL;
 
 public class MainPage {
 
-    private static final By currentMenu = By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]"); //локатор текущего меню
     private final WebDriver driver;
+    private final By currentMenu = By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]"); //локатор текущего меню
     private final By loginToAccount = By.xpath(".//button[text()='Войти в аккаунт']"); //локатор кнопки Войти в аккаунт
     private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']"); //локатор кнопки Личный кабинет
     private final By orderButton = By.xpath(".//button[text()='Оформить заказ']"); //локатор кнопки Оформить заказ
